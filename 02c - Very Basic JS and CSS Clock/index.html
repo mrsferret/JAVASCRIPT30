@@ -8,12 +8,17 @@
   </head>
   <body>
     <div id="clock">
-      <div id="hour-hand"></div>
-      <div id="minute-hand"></div>
-      <div id="second-hand"></div>
+      <div id="hourHand"></div>
+      <div id="minuteHand"></div>
+      <div id="secondHand"></div>
     </div>
     <script>
       setInterval(() => {
+        // calculates the degrees of rotation for each hand every
+        // 1000msecs (ie. every second)
+        // hour hand rotates 30 degrees/60 mins + 0.5 degrees per minute of partial
+        // hour
+        // eg. at 3.15 the hour hand will travel 3*30 degrees + 15/2 degrees = 97.5degrees
         d = new Date();
         htime = d.getHours();
         mtime = d.getMinutes();
@@ -22,9 +27,9 @@
         mrotation = 6 * mtime;
         srotation = 6 * stime;
 
-        hour.style.transform = `rotate(${hrotation}deg)`;
-        minute.style.transform = `rotate(${mrotation}deg)`;
-        second.style.transform = `rotate(${srotation}deg)`;
+        hourHand.style.transform = `rotate(${hrotation}deg)`;
+        minuteHand.style.transform = `rotate(${mrotation}deg)`;
+        secondHand.style.transform = `rotate(${srotation}deg)`;
       }, 1000);
     </script>
   </body>
