@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transition Timing Demo</title>
+  </head>
+  <body>
+    <style>
+      /*body { 
+      margin: 0;*/ /* Remove default margin */
+      /*height: 100vh; */ /* Set the body height to full viewport height */
+      /*display: flex; */
+      /*align-items: center; */ /* Center vertically */
+      /*justify-content: center; */ /* Center horizontally */
+      /* }  */
+
+      .stable {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 320px;
+        transform: translate(-50%, -50%);
+        display: flex;
+        /*align-items: flex-end; */ /* Align balloons at the bottom */
+        background-color: yellow;
+        font-family: "Arial Narrow";
+        font-size: 20px;
+        color: black;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .stable .balloon {
+        position: relative;
+        bottom: 0;
+        width: 100px;
+        height: 163px;
+        background: url(images/balloon.png) no-repeat;
+      }
+      .stable:hover .balloon {
+        bottom: 157px;
+        transition-duration: 3s;
+      }
+
+      .stable .balloon.default {
+        left: 39px;
+        background-image: url(images/balloon-blue.png);
+      }
+      .stable .balloon.linear {
+        left: 149px;
+        transition-timing-function: linear;
+      }
+      .stable .balloon.ease-in {
+        left: 259px;
+        transition-timing-function: ease-in;
+      }
+      .stable .balloon.ease-out {
+        left: 369px;
+        transition-timing-function: ease-out;
+      }
+      .stable .balloon.ease-in-out {
+        left: 479px;
+        transition-timing-function: ease-in-out;
+      }
+      .stable .balloon.cubic-bezier {
+        left: 589px;
+        transition-timing-function: cubic-bezier(0, 1, 1, 0);
+      }
+    </style>
+
+    <div class="stable">
+      <div class="balloon default">default</div>
+      <div class="balloon linear">linear</div>
+      <div class="balloon ease-in">ease-in</div>
+      <div class="balloon ease-out">ease-out</div>
+      <div class="balloon ease-in-out">ease-in-out</div>
+      <div class="balloon cubic-bezier">cubic-bezier</div>
+    </div>
+  </body>
+</html>

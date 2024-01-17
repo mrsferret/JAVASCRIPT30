@@ -60,6 +60,12 @@
         background: black;
         position: absolute;
         top: 50%;
+        transform-origin: 100%; /* Moves pivot point 100% along the x-axis for each hand */
+        transform: rotate(
+          90deg
+        ); /* ensures hands' starting point is at 12 o'lock*/
+        transition-timing-function: cubic-bezier(0.1, 2, 7, 0.58, 1);
+        transition-timing-function: ease-in;
       }
     </style>
 
