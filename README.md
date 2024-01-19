@@ -1,7 +1,9 @@
 # JavaScript30
  30 Day Vanilla JS for Women Who Code's Days of Code Challenge 2024
 
- Grab the course at [https://JavaScript30.com](https://JavaScript30.com)
+ The course is Wes Bos's JavaScript30 30 Day Challenge (JS31)
+ 
+ You can access it for free at [https://JavaScript30.com](https://JavaScript30.com)
 
 
 
