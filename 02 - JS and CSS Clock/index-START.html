@@ -48,9 +48,6 @@
         position: relative;
         width: 100%;
         height: 100%;
-        /*transform: translateY(
-          -3px
-        ); */ /* account for the height of the clock hands */
         border: 2px solid red;
       }
 
@@ -68,28 +65,28 @@
         transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
       }
 
-      /*.hour-hand {
-        background: black;
-        width: 50%;
-        height: 6px;
-      }*/
-
       .hour-hand {
-        background: black;
-        width: 40%;
-        height: 7px;
-        transform-origin: 90%; /* Adjust the rotation point for the hour hand */
+        background: #daa520;
+        height: 1.5%;
+        left: 25%;
+        top: 50%;
+        width: 25%;
       }
 
       .minute-hand {
-        background: black;
-        width: 50%;
-        height: 5px;
+        background: #daa520;
+        height: 1%;
+        left: 8%;
+        top: 50%;
+        width: 42%;
       }
+
       .second-hand {
-        width: 50%;
-        height: 3px;
         background: red;
+        height: 0.5%;
+        left: 5%;
+        top: 50%;
+        width: 45%;
       }
     </style>
 
