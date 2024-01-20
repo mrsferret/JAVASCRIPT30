@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!--this code creates a webpage with interactive controls that allow users to adjust spacing, blur, and 
+  base color dynamically. The JavaScript part ensures that the changes are reflected in the corresponding 
+  CSS variables, updating the styling of the image accordingly.-->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,6 +12,8 @@
     <h2>Update CSS Variables with <span class="hl">JS</span></h2>
 
     <div class="controls">
+      <!-- Three input controls provide a range input for spacing, a range input for blur, and a color input
+        for the base color. -->
       <label for="spacing">Spacing:</label>
       <input
         id="spacing"
@@ -35,16 +40,18 @@
       <input id="base" type="color" name="base" value="#ff0066" />
     </div>
 
-    <!-- <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500" /> -->
     <img src="./jezael-melgoza-layMbSJ3YOE-unsplash.jpg" />
 
     <style>
+      /* CSS variables used to define base color, spacing, and blur values that will be dynamically updated
+       using JavaScript. */
       :root {
         --base: #ff0066;
         --spacing: 10px;
         --blur: 10px;
       }
-
+      /* Style the img tag using these CSS variables, creating dynamic effects like padding, background color, 
+      and blur.*/
       img {
         padding: var(--spacing);
         background: var(--base);
@@ -78,8 +85,12 @@
     </style>
 
     <script>
+      /* select all input elements with the class "controls" and assigns them to the inputs variable. */
       const inputs = document.querySelectorAll(".controls input");
 
+      /* function handle changes in the input values. It reads the data-sizing attribute of the input 
+      (used for spacing and blur) and updates the corresponding CSS variable (--${this.name}) with the 
+      new value and suffix.*/
       function handleUpdate() {
         const suffix = this.dataset.sizing || "";
         document.documentElement.style.setProperty(
@@ -87,7 +98,9 @@
           this.value + suffix
         );
       }
-
+      /* Event listeners added to each input for both the "change" and "mousemove" events, calling the 
+      handleUpdate function. This ensures that the CSS variables are updated in real-time as the user 
+      interacts with the input controls. */
       inputs.forEach((input) => input.addEventListener("change", handleUpdate));
       inputs.forEach((input) =>
         input.addEventListener("mousemove", handleUpdate)
